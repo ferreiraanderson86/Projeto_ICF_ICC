@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  icc-icf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+    command: python Script_ICC_ICF.py
